@@ -1,0 +1,5 @@
+{
+    "db": {
+        "conn_str":"mongodb://localhost:27017/angularProject"
+    }
+}

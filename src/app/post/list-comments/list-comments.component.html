@@ -1,0 +1,39 @@
+<div class="stats">
+  <a class="btn btn-default stat-item" (click)="ShowComments()"> Comments
+    <!--<i class="fa fa-comment-o fa-lg"></i>-->
+    <i class="fa fa-envelope-open" aria-hidden="true"></i>
+
+  </a>
+  <a title={{listUsers}} (mouseover)='GetAllUsernames()' class="btn btn-default stat-item ml-2"
+    (click)="LikeUnlikePost()">
+    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Likes: {{Counter}}</a>
+    <!--<i class="fa fa-thumbs-up icon"></i>{{Counter}} </a>-->
+  <a class="btn btn-default stat-item ml-2" (click)="DeletePost()">Delete
+    <i class="fa fa-trash-o fa-lg"></i>
+  </a>
+  <a class="btn btn-default stat-item ml-2" (click)="editPost()">Edit
+    <i class="fa fa-edit"></i>
+  </a>
+</div>
+<div class="input-group mt-2 pr-3">
+  <input class="form-control" placeholder="Add a comment" [(ngModel)]="newComment" type="text">
+  <span class="input-group-addon">
+    <a (click)="SaveComment()"><i class="fa fa-edit"></i>Save</a>
+  </span>
+</div>
+<div *ngFor="let y of commentdata">
+  <ul class="comments-list">
+    <li class="comment">
+      <a class="pull-left" href="#">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYf7snZGKKgSFjFDSTRRcL7Uku_qfkdbXVAInV4tZXEJcmBq2k" height="28px" alt="avatar">
+      </a>
+      <div>
+        <h5 class="text-capitalize font-weight-bold">{{y.Createdby}}</h5>      
+        <span>{{y.commentBody}}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="border border-secondary p-2 pl-3 pr-3 mt-2 mr-3" *ngIf="ShowhideEditPost">
+    <app-edit-post [pID]="IdforPost"></app-edit-post>
+  </div>

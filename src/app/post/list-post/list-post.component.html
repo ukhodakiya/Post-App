@@ -1,0 +1,21 @@
+<div class="container bootstrap snippet">
+  <div class="col-sm-7">
+    <div *ngFor="let x of postdata">
+      <div class="panel panel-white post panel-shadow">
+        <div class="post-heading">
+          <div class="pull-left image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYf7snZGKKgSFjFDSTRRcL7Uku_qfkdbXVAInV4tZXEJcmBq2k" class="img-circle avatar" alt="user profile image">
+          </div>
+          <div class="pull-left meta">
+            <div class="title h5">
+              <b class="text-capitalize">{{x.Createdby}}</b> shared a <b>{{x.postTitle}}</b>. </div>
+          </div>
+        </div>
+        <div class="post-description">
+          <p>{{x.postBody}}</p>
+          <app-list-comments [post_ID]="x._id" (comments_event)="ReloadAllPosts($event)"></app-list-comments>
+        </div>               
+      </div>
+    </div>
+  </div>
+</div>

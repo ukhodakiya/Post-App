@@ -1,0 +1,19 @@
+
+<div class="card bg-light" style="height: 485px;">
+    <article class="card-body mx-auto" style="width: 350px;">
+       <h4 class="card-title mt-3 text-center">Create Post</h4>
+       <form #createPostForm="ngForm">
+          <div class="form-group input-group">             
+             <input type="text" class="form-control" placeholder="Title" [(ngModel)]="post.postTitle" name="title" required>             
+          </div>
+          <div class="form-group input-group">             
+             <textarea class="form-control" rows="3" placeholder="Description" name="description" [(ngModel)]="post.postBody" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success" [disabled]="!createPostForm.valid" (click)="SubmitNewPost()">Submit</button>
+          <div class="alert alert-success" role="alert" style="margin-top: 10px" *ngIf="showSuccessMsg">
+             Post created successfully !!
+          </div>
+       </form>
+    </article>
+  </div>
+  

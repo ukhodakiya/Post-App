@@ -1,0 +1,28 @@
+a.logo {
+	display: block;
+	background: url("/assets/sprite.png") 0 0 no-repeat;	
+	overflow: hidden;
+
+	background-position: -484px 0px; 
+	width: 100px;
+	height: 73px;
+}
+
+a.logo span {
+	display: block;
+	background: url("/assets/shine.png") -60px -80px no-repeat;	
+
+	transition-property: all;
+	transition-duration: .8s;
+
+	height: 70px;
+	width: 91px;
+}
+
+a.logo:hover span {
+	background-position: 100px 100px;
+}
+
+a.logo span {
+	border-radius: 50%;
+}

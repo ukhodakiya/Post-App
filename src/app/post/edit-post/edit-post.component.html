@@ -1,0 +1,16 @@
+<div class="mt-4" *ngFor="let post of datapost">
+  <div class="form-group">
+    <label>Created by: <span class="text-capitalize">{{post.Createdby}}</span></label>    
+    <br>
+    <label>Post Title:</label>
+    <input type="text" class="form-control" id="ptitle" (input)="ptitle=$event.target.value"
+     [(ngModel)]="post.postTitle" ngDefaultControl >
+ 
+    <label>Post Description:</label>
+    <input type="text" class="form-control" id="pbody" (input)="pbody=$event.target.value"
+     [(ngModel)]="post.postBody" ngDefaultControl >
+  </div>
+  <div>
+    <button class="btn btn-sm btn-primary" (click)="SaveEditedPost()">  <i class="fa fa-wrench" aria-hidden="true"></i>Update</button>
+  </div>
+</div>

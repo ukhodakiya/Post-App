@@ -1,0 +1,37 @@
+
+<div class="card bg-light">
+  <article class="card-body mx-auto" style="width:25%">
+      <h4 class="card-title mt-3 text-center">Create Account</h4>
+      <form #FormName="ngForm">
+          <div class="form-group input-group">
+
+              <input name="firstname" class="form-control" placeholder="First name" type="text" ngModel required>
+          </div>
+          <div class="form-group input-group">
+
+              <input name="lastname" class="form-control" placeholder="Last name" ngModel type="text" required>
+          </div>
+          <div class="form-group input-group">
+
+              <input class="form-control" placeholder="Username" ngModel type="text" name="username"  required>
+          </div>
+          <div class="form-group input-group">
+
+              <input class="form-control" placeholder="Password" ngModel type="password" name="password"  required>
+          </div>
+          <div class="form-group input-group">
+
+              <input name="phone" class="form-control" pattern=".{10}" placeholder="Phone number" ngModel type="text"  required>
+          </div>
+          <div class="form-group input-group" style="width:70%;">
+              <input class="form-control" name="gender" type="radio" ngModel  value="Male" required>Male
+              <input class="form-control" name="gender" type="radio" ngModel  value="Female" required>Female
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block" [disabled]="!FormName.valid"  (click)="submitNewUser(FormName)"> Create Account </button>
+          </div>
+          <p class="text-center">Have an account? <a [routerLink]="['/login']">Log In</a> </p>
+      </form>
+  </article>
+</div>
+
